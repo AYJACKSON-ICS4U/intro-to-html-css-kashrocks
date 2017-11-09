@@ -1,0 +1,30 @@
+<html>
+<body><!--
+<canvas width="500" height="500" style="border: 1px solid #ff0000"
+id="gradient">
+</canvas>
+<script>
+var a=document.getElementById("gradient");
+var b=a.getContext("2d");
+var c=b.createLinearGradient(0,0,350,0);
+c.addColorStop(0,"red");
+c.addColorStop(0.5,"yellow");
+c.addColorStop(1,"black");
+b.fillStyle=c;
+b.fillRect(50,50,250,150);
+</script>-->
+<canvas width="500" height="500" style="border: 1px solid #ff0000"
+id="gradient">
+</canvas>
+<script>
+var a=document.getElementById("gradient");
+var b=a.getContext("2d");
+var c=b.createRadialGradient(300,300,20,50,120,75);
+c.addColorStop(0,"red");
+c.addColorStop(0.5,"black");
+c.addColorStop(1,"orange");
+b.fillStyle=c;
+b.fillRect(50,50,450,400);
+</script>
+</body>
+</html>

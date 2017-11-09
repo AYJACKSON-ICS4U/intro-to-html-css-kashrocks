@@ -1,0 +1,101 @@
+<html>
+<head>
+<script>
+function searchFunction()
+{
+var soft2="Cegonsoft";
+var soft1=soft2.search(/cfd/i);
+document.getElementById("soft3").innerHTML=soft1;
+}
+
+function replaceFunction()
+{
+var it2=document.getElementById("it1").innerHTML;
+var it3=it2.replace(/Cegonsoft/,"It has been replaced");
+document.getElementById("it1").innerHTML=it3;
+}
+
+function searchMatch()
+{
+//var str="Cegonsoft training and placement";
+var str="Cegonsoft training and placement 613-6044354";
+//var mat2=/[^aeiou]/g;
+//var mat2=/[^a-zA-Z]/g;
+var mat2=/[C|s|g|t]/g;
+var mat3=str.match(mat2);
+document.getElementById("mat1").innerHTML=mat3;
+}
+
+function migFind()
+{
+var set2="Cegonsoft\n Cegonsoft";
+document.getElementById("set1").innerHTML=set2;
+var set3=/Cegon/gim;
+var set4=set3.multiline;
+document.getElementById("set11").innerHTML=set4;
+var set5=set3.global;
+document.getElementById("set12").innerHTML=set5;
+var set6=set3.ignoreCase;
+document.getElementById("set13").innerHTML=set6;
+}
+
+function srcFind()
+{
+var str1="Cegonsoft";
+document.getElementById("src1").innerHTML=str1;
+var src3=/Cegon/g;
+var src4="The text of RegExp is: " +src3.source;
+document.getElementById("src12").innerHTML=src4;
+var src5=new RegExp("Wow regular expression","g");
+var src6=src5.constructor;
+document.getElementById("src13").innerHTML=src6;
+}
+
+function quantFind()
+{
+var string="Haaaaiiiii";
+document.getElementById("quant1").innerHTML=string;
+//var string1=/a+/g;
+//var string1=/a{78}/g;
+//var string1=/a{2,5}/g;
+//var string1=/a{2,}/g;
+//var string1=/iiii$/g;
+var string1=/^Haaa/g;
+var string2=string.match(string1);
+document.getElementById("quant12").innerHTML=string2;
+}
+</script>
+</head>
+<body>
+<p>Click the button below to search for "soft" in Cegonsoft (find)</p>
+<button onclick="searchFunction()">Click!</button>
+<p id="soft3"></p>
+
+<p>Click the button below to replace "Cegonsoft" with "It has been replaced" (replace)</p>
+<button onclick="replaceFunction()">Click!</button>
+<p id="it1">Cegonsoft</p>
+
+<p>Click the button below to find all the constanants in "Cegonsoft training and placement"(search and match)</p>
+<button onclick="searchMatch()">Click!</button>
+<p id="mat1">Cegonsoft training and placement</p>
+
+<p>Click the button below to find whether modifier "m", "i", "g" are set or not</p>
+<button onclick="migFind()">Click!</button>
+<p id="set1"></p>
+<p id="set11"></p>
+<p id="set12"></p>
+<p id="set13"></p>
+
+<p>Click the button below to find the pattern of regular expression (source)</p>
+<button onclick="srcFind()">Click!</button>
+<p id="src1"></p>
+<p id="src12"></p>
+<p id="src13"></p>
+
+<p>Click the button below to find atleast one given in the global string (quantifier)</p>
+<button onclick="quantFind()">Click!</button>
+<p id="quant1"></p>
+<p id="quant12"></p>
+</body>
+</html>
+

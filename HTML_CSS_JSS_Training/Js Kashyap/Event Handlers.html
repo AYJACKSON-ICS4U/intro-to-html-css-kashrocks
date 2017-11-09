@@ -1,0 +1,106 @@
+<html>
+<head>
+<style>
+div{width:200px; height:200px; border:1px solid black;}
+</style>
+<script>
+function Thiscanbeanything()
+{
+var x=document.getElementById("blur");
+x.value=x.value.toUpperCase();
+}
+function changeText()
+{
+var x=document.getElementById("change");
+x.value=document.write("You wrote something");
+}
+function displayDate()
+{
+document.getElementById("date1").innerHTML=Date();
+}
+function displayHi()
+{
+document.getElementById("forHi").innerHTML="Hi";
+}
+function willBlue(x)
+{
+x.style.background="blue";
+}
+function alert1()
+{
+alert("Congrats! You have won a free trip to Hawaii!");
+}
+function alert2()
+{
+alert("Congrats! You have won another free trip to Hawaii!");
+}
+function imgLoad()
+{
+alert("Your image has loaded!");
+}
+function pageLoad()
+{
+alert("Your page has loaded!");
+}
+function mousebtdown()
+{
+document.getElementById("mouse").style.color="yellow";
+}
+function mousebtup()
+{
+document.getElementById("mouse").style.color="green";
+}
+function displayCoordinates(e)
+{
+var x=e.clientX;
+var y=e.clientY;
+var anything="Coordinates:("+x+","+y+")";
+document.getElementById("coordinatedisplay").innerHTML=anything;
+}
+function clearCoordinates()
+{
+document.getElementById("coordinatedisplay").innerHTML="Coordinates:00,00";
+}
+function movemouse(t)
+{
+t.innerHTML="Thankyou!";
+}
+function mouseout(t)
+{
+t.innerHTML="Mouse over me!";
+}
+function submitit()
+{
+alert("your reply was submitted");
+}
+function myselect()
+{
+alert("Great you selected text");
+}
+function selecttext()
+{
+document.getElementById("ons").select();
+}
+</script>
+<body onload="pageLoad()">
+<p>User name:<input type="text" id="blur" onblur="Thiscanbeanything()"></p> 
+<p>Type anything:<input type="text" id="change" onchange="changeText()"></p>
+<p>Click the button to display the date</p><button onclick="displayDate()" id="date1">Date</button>
+<p>Double click the button to display "hi"</p><button ondblclick="displayHi()">This will say hi</button><p id="forHi"></p>
+<p>Click inside the box and it will turn blue</p><input type="text" id="focus" onfocus="willBlue(this)">
+<p>Press a key in the below box and it will give you an alert message</p><input type="text" id="down" onkeydown="alert1()">
+<p>Press and release a key in the below box and it will give you an alert message</p><input type="text" id="press" onkeyup="alert2()"><br><br>
+<img style="width:100px; height:100px;"src="Koala.jpg" onload="imgLoad()"><br><br>
+<p id="mouse" onmousedown="mousebtdown()" onmouseup="mousebtup()">Just hold your click on this sentence</p>
+<div onmousemove="displayCoordinates(event)" onmouseout="clearCoordinates()"></div>
+<p id="coordinatedisplay"></p>
+<div onmouseover="movemouse(this)" onmouseout="mouseout(this)">Mouse over me!</div><br><br>
+<form onsubmit="submitit()">
+Enter name:<input type="text" value="Type here">
+<button type="submit" value="submit">Submit</button>
+</form>
+<input type="text" id="ons" onselect="myselect()" value="Click the below button to higlight this!">
+<button type="button" onclick="selecttext()">Highlight!</button>
+
+</body>
+</html>

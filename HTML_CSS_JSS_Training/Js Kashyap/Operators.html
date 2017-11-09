@@ -1,0 +1,53 @@
+<html>
+<head>
+<script>
+function mathMy()
+{
+var a=30;
+var b=20;
+var c=30-20;
+document.getElementById("arith").innerHTML=c;
+}
+
+function compareMy()
+{
+var a=30;
+var b=30;
+var c=a==b;
+document.getElementById("comp").innerHTML=c;
+}
+
+function logicalMy()
+{
+var a=30;
+var b=20;
+var c=30;
+var d=(a>b)&&(b<=c);
+document.getElementById("log").innerHTML=d;
+}
+
+function binaryMy()
+{
+var a=5;
+document.getElementById("bin").innerHTML=a<<2;
+}
+</script>
+</head>
+<body>
+<p>Click the button to do arithemic stuff</p>
+<button onclick="mathMy()">Click!</button>
+<p id="arith"></p>
+
+<p>Click the button to do compare stuff</p>
+<button onclick="compareMy()">Click!</button>
+<p id="comp"></p>
+
+<p>Click the button to logical stuff</p>
+<button onclick="logicalMy()">Click!</button>
+<p id="log"></p>
+
+<p>Click the button to do binary stuff</p>
+<button onclick="binaryMy()">Click!</button>
+<p id="bin"></p>
+</body>
+</html>
